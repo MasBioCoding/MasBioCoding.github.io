@@ -11,7 +11,7 @@ I collected some diatoms from the canals with a plankton net. Then I photographe
 
 Identifying diatoms is tedious if you are not an expert, I have no idea who we are looking at.
 
-![Diatom 1](/images/diatoms/diatomee_stack1.jpg)
+ <img src="/images/diatoms/diatomee_stack1.jpg" alt="diatomee_stack1.jpg" width="360"/>
 
 diatomos is Greek for divided equally. Diatom shells are made of two halves that slide into each other. When they reproduce they slide these halves apart and each gets a complementary half built into it, so that each time the diatom divides its shell gets a little smaller.
 
