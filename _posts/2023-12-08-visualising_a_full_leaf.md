@@ -9,7 +9,7 @@ categories: images
 
 Have you ever looked at a leaf and wondered about it's cellular structures?
 Have you ever been teased into this feeling of not fully understanding a plant?
-Most animals run away, giving you pleanty reason not to know them intimately. But plan't can't hide,
+Most animals run away, giving you pleanty reason not to know them intimately. But plants can't hide,
 yet still the must peak you curiosity. Have you ever sat in front of a leaf and strained your eyes to see inside?
 With a microscope, you might gain insight, but you lose perspective. Peering into the binoculars, the sense of scale disappears.
 After an initial wonder, a new wave of curiosity arises, and the only answer would surely be to increase the magnification.
