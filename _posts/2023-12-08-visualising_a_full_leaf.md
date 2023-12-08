@@ -9,8 +9,8 @@ categories: images
 
 Have you ever looked at a leaf and wondered about it's cellular structures?
 Have you ever been teased into this feeling of not fully understanding a plant?
-Most animals run away, giving you pleanty reason not to know them intimately. But plan't can't hide,
-yet still the must peak you curiosity. Have you ever sat in front of a leaf and strained your eyes to see inside?
+Most animals run away, giving you pleanty reason not to know them intimately. But plants can't hide,
+yet still they must peak your curiosity. Have you ever sat in front of a leaf and strained your eyes to see inside?
 With a microscope, you might gain insight, but you lose perspective. Peering into the binoculars, the sense of scale disappears.
 After an initial wonder, a new wave of curiosity arises, and the only answer would surely be to increase the magnification.
 Deeper still lies the mystery.
@@ -18,9 +18,9 @@ Deeper still lies the mystery.
 This can go on and on and every time we gain something, but we also leave behind the world we knew. And looking back at the full leaf,
 we feel only more wonder, but no satisfaction. In this project I am trying to marry the world we know, to the world too small to see.
 I want you to have acces to the leaf in it's entirety without distinction from it's cellular composition.
-Image stitching and focus stacking allow for this. I have created a single large image composed of hundreds of photo's.
+Image stitching and focus stacking allow for this. I have created a single large image composed of hundreds of photos.
 This allows you to zoom in to any part of the leaf and see it's cells, while at the same time keeping the perspective of the leaf
-as a whole. Go ahead and try:
+as a whole. Zoom in to see details.
 
 ![top](/images/full_leaf/plantbovenkantq4_Panorama-1.jpg)
 ![bottom](/images/full_leaf/plantonderkantq4_Panorama-1.jpg)
@@ -43,7 +43,7 @@ Image stitching is taking many photographs that overlap, so that a software can 
 
 ![untstiched1](/images/full_leaf/stitchincomplete2.jpg)
 
-Notice the two area's slightly overlap. The bottom of this second image correspond to the top of the first image. Software can identify the overlapping features into a full image. I have manually taken hundreds of photographs of a very small young leaf, maybe 4 mm in diameter. The focus stacks are about 20 images each and then the stitches are 20 images for the top of leaf 1, and 11 for the bottom of leaf 2. The original png files are about 150 MB  for the final images, however don't worry. I have compressed them to about 5 MB each. The other photo's are each less than a megabyte to this page won't eat up data.
+Notice the two area's slightly overlap. The bottom of this second image correspond to the top of the first image. Software can identify the overlapping features into a full image. I have manually taken hundreds of photographs of a very small young leaf, maybe 4 mm in diameter. The focus stacks are about 20 images each and then the stitches are 20 images for the top of leaf 1, and 11 for the bottom of leaf 2. The original png files are about 150 MB  for the final images, however don't worry. I have compressed them to about 5 MB each. The other photos are each less than a megabyte to this page won't eat up data.
 
 # Thoughts for future work
 
