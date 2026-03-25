@@ -8,4 +8,4 @@ I study interdisciplinary studies with a major in biology. I love thinking about
 
 &nbsp;
 
- <img src="/images/personal/CFB365E2-4EC7-4A0A-A73E-0EBC0F05EE48.jpg" alt="CFB365E2-4EC7-4A0A-A73E-0EBC0F05EE48.jpg" width="360"/>
+ <img src="/images/personal/4c05516f-1401-40b1-8e1d-c002d668034b.JPG" alt="Photo of Mas Jansma" width="360"/>
