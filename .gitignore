@@ -5,6 +5,7 @@ _site/
 .jekyll-metadata
 
 # Bundler / Ruby
+.gem/
 .bundle/
 vendor/bundle/
 vendor/cache/
