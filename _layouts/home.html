@@ -7,26 +7,89 @@ layout: default
     <h1 class="page-heading">{{ page.title }}</h1>
   {%- endif -%}
 
-  {{ content }}
+  <div class="home__layout">
+    <div class="home__links">
+      {{ content }}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
+      {%- if site.posts.size > 0 -%}
+        <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+        <ul class="post-list">
+          {%- for post in site.posts -%}
+          <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </li>
+          {%- endfor -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <aside class="home__media" aria-label="Featured video">
+      <div class="home-video">
+        <video
+          id="homepage-video"
+          class="home-video__player"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata">
+          <source src="{{ '/videos/homepage/landing_gif.mp4' | relative_url }}" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button
+          type="button"
+          class="home-video__toggle"
+          data-video-toggle="homepage-video"
+          aria-pressed="false">
+          Unmute
+        </button>
+      </div>
+    </aside>
+  </div>
 
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var button = document.querySelector("[data-video-toggle]");
+    if (!button) {
+      return;
+    }
+
+    var video = document.getElementById(button.getAttribute("data-video-toggle"));
+    if (!video) {
+      return;
+    }
+
+    function syncButton() {
+      var isMuted = video.muted;
+      button.textContent = isMuted ? "Unmute" : "Mute";
+      button.setAttribute("aria-pressed", String(!isMuted));
+    }
+
+    syncButton();
+
+    button.addEventListener("click", function () {
+      video.muted = !video.muted;
+
+      var playback = video.play();
+      syncButton();
+
+      if (playback && typeof playback.catch === "function") {
+        playback.catch(function () {
+          video.muted = true;
+          syncButton();
+        });
+      }
+    });
+  });
+</script>

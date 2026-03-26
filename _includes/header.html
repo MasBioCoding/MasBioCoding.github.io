@@ -1,0 +1,28 @@
+<header class="site-header site-header--hero" role="banner">
+  <div class="hero-strip">
+    <img
+      class="hero-strip__image"
+      src="{{ '/images/top/topstrip.png' | relative_url }}"
+      alt=""
+      aria-hidden="true">
+
+    <div class="hero-strip__overlay">
+      <div class="wrapper hero-strip__inner">
+        <a
+          class="hero-strip__home{% if page.url == '/' %} is-current{% endif %}"
+          href="{{ '/' | relative_url }}"
+          {% if page.url == '/' %}aria-current="page"{% endif %}>
+          Mas Jansma
+        </a>
+      </div>
+      <nav class="hero-strip__nav" aria-label="Primary">
+        <a
+          class="hero-strip__link{% if page.url == '/about/' %} is-current{% endif %}"
+          href="{{ '/about/' | relative_url }}"
+          {% if page.url == '/about/' %}aria-current="page"{% endif %}>
+          About
+        </a>
+      </nav>
+    </div>
+  </div>
+</header>
