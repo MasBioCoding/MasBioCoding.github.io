@@ -62,6 +62,30 @@ jekyll 4.3.2
 - If `Gemfile` changes, run `bundle install` again
 - If `_config.yml` changes, restart the Jekyll server
 
+## Analytics
+
+GoatCounter is loaded site-wide from [`_includes/goatcounter.html`](/Users/masjansma/Desktop/MasBioCoding.github.io/_includes/goatcounter.html).
+It only renders in production builds, so local `bundle exec jekyll serve` previews do not send analytics.
+
+The current config assumes the hosted GoatCounter site code `masjansma`:
+
+```text
+https://masjansma.goatcounter.com/count
+```
+
+If you create a different GoatCounter site code, update [`_config.yml`](/Users/masjansma/Desktop/MasBioCoding.github.io/_config.yml).
+
+To avoid counting your own traffic:
+
+- Add your IP address(es) in GoatCounter under `Settings -> Tracking -> Ignore IPs`
+- Or open `https://masjansma.nl/#toggle-goatcounter` once in each browser you use for testing
+
+To access the hosted analytics dashboard, open:
+
+```text
+https://masjansma.goatcounter.com
+```
+
 ## Ruby 3.4 note
 
 This repo explicitly includes a few gems that older Jekyll dependencies expect on Ruby `3.4`:
