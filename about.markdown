@@ -4,7 +4,13 @@ title: About
 permalink: /about/
 ---
 
-I study interdisciplinary studies with a major in biology. I love thinking about living systems from the perspective of science. First and foremost biological systems are boundless and not open to understanding. It is interesting to learn how science justifies simplyfying systems into things, how placing bounds on what a thing is and what can be known about it increases knowledge. So far rather than reduce my sensitivity to complexity, I feel science actually has increased it, be it in confusing ways. I'm keen on confusing myself by stepping into bordering disciplines like chemistry, mathmatics, physics and informatics. It is not essential for me to master these other skills, but knowing they exist are makes me more comfortable relying on others to perform their arts.
+In the heart of the Anthropocene, we need to unify science, art and spirituality. 
+
+It is our shared responsibility to re-imagine how we relate to the natural world, and write a story that our great-great grandchildren might one day love. Biological story-telling brings the beauty and the degradation of ecosystems out of the lab, and into the hearts and minds where they need to be. I'm a public speaker seeking to discuss contemporary biology in human dominated ecosystems from a sensitive and scientific point of view. 
+
+In my digital lab I study animal languages and animal migrations, and I am looking to continue working in this niche. I have previous experience in genomic analyses, high-throughput phenotyping, and microscopy.
+
+I hold a particular focus on aquatic systems, or rather, my terrestrial bias is weak. The world is mostly water after all.
 
 &nbsp;
 
