@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Caveat:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400&family=Caveat:wght@500&display=swap">
 <style>
 /* Layout: one column on a felt table. The folded invitation stands in a square slot that the flat sheet fills exactly
    once it is open; everything a guest does happens on the paper itself, and a single line below it talks back. */
@@ -103,7 +103,7 @@ body {
   <article class="sr-only" id="text">
     <h1>Niet schrikken!</h1>
     <p id="srBody"></p>
-    <p>Data rsvp (november), klik op data:</p>
+    <p>Data rsvp november (klik op data):</p>
     <ul id="srDays"></ul>
     <p>Foto: een koe met een VR-bril op, tussen andere koeien aan het hooi in de stal.</p>
   </article>
@@ -120,7 +120,7 @@ const PHOTO = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAcFBQYFBA
 // ---------- the text, exactly as written ----------
 const TITLE = 'Niet schrikken!';
 const BODY = 'Je bent gewoon uitgenodigd voor een diner/lunch waarbij we de toekomst van de natuur gaan bespreken. Staan er straks nog wel koeien in de wei! Of zijn het vegetarische leeuwen? Een automatische bioloog? Of killer robots die al het zand op aarde tot chips omsmelten?! Waarschijnlijk niet, maar van alle rare scenario’s die je wel of niet kunt bedenken gaan er toch een paar gebeuren. Nu is volgens mij het moment om te speculeren, bestuderen en educeren. Ik hoop dat je kunt komen, laat het weten!';
-const DATES_HEAD = 'Data rsvp (november):', CLICK = ' (klik op data)';
+const DATES_HEAD = 'Data rsvp november (klik op data):', KLAAR = '(klik hier als je klaar bent)';
 const DAYS = [
   {d: 3, wd: 'di', slots: ['12:00–14:00', '16:00–18:00', '19:00–21:00']},
   {d: 4, wd: 'wo', slots: ['14:00–16:00', '16:00–18:00']},
@@ -142,7 +142,7 @@ function tryLayout(m, s, pw){
   const W = SHEET - 2 * MARGIN, items = [], slots = {};
   const put = (str, font, x, y) => { m.font = font; items.push({font, x, y, s: str}); return x + m.measureText(str).width; };
   let y = MARGIN;
-  const ts = s * 1.8; y += ts * .9; put(TITLE, F(700, ts), MARGIN, y);
+  const ts = s * 1.8; y += ts * .9; put(TITLE, F(400, ts), MARGIN, y);
   y += s * .55;
   m.font = F(400, s); const lh = s * 1.36;
   let line = '', lines = [];
@@ -150,14 +150,14 @@ function tryLayout(m, s, pw){
   lines.push(line);
   for (const l of lines){ y += lh; put(l, F(400, s), MARGIN, y - s * .32); }
   y += s * .55 + lh;
-  const hx = put(DATES_HEAD, F(700, s), MARGIN, y - s * .32); put(CLICK, F(400, s), hx, y - s * .32);
+  put(DATES_HEAD, F(400, s), MARGIN, y - s * .32);
   // below: the dates, the name and klaar on the left; the photo on the right
   const top = y + s * .45, ph = pw / ASPECT, photo = {x: SHEET - MARGIN - pw, y: top + s * .2, w: pw, h: ph};
   const right = photo.x - s * .9, dl = s * 1.5;
   let yy = top;
   for (const D of DAYS){
     yy += dl; let base = yy - s * .42;
-    let x = put(String(D.d), F(700, s), MARGIN, base); x = put(' (', F(400, s), x, base); const indent = x;
+    let x = put(String(D.d), F(400, s), MARGIN, base); x = put(' (', F(400, s), x, base); const indent = x;
     D.slots.forEach((t, i) => {
       m.font = F(400, s); let sep = i ? ' of ' : '';
       if (x + m.measureText(sep + t).width > right){ yy += dl * .86; base = yy - s * .42; x = indent; sep = i ? 'of ' : ''; }
@@ -167,10 +167,11 @@ function tryLayout(m, s, pw){
     x = put(')', F(400, s), x, base);
     if (x > right + s * .6) return null;
   }
-  yy += dl * 1.35; const nb = yy - s * .42, nx = put('Naam:', F(700, s), MARGIN, nb);
+  yy += dl * 1.35; const nb = yy - s * .42, nx = put('Naam:', F(400, s), MARGIN, nb);
   const name = {x: nx + s * .3, y: nb - s * 1.25, w: right - nx - s * .3, h: s * 1.6, base: nb};
-  yy += dl * 1.25; const kb = yy - s * .42, kx = put('(klaar)', F(700, s), MARGIN, kb);
+  yy += dl * 1.25; const kb = yy - s * .42, kx = put(KLAAR, F(400, s), MARGIN, kb);
   const klaar = {x: MARGIN, y: kb - s * .85, w: kx - MARGIN, h: s * 1.1};
+  if (kx > right && klaar.y < photo.y + ph) return null; // the long klaar line may run under the photo only below it
   const bottom = Math.max(yy + s * .1, photo.y + ph);
   if (name.w < s * 6 || bottom > SHEET - MARGIN) return null;
   return {items, slots, s, photo, name, klaar};
@@ -505,7 +506,7 @@ async function deliver(m){
 // ---------- start: fonts and photo first, so the folded paper already carries the printed text ----------
 (async () => {
   const img = new Image(); img.src = PHOTO;
-  const fonts = [F(400, 13), F(700, 13), `500 18px ${HAND}`];
+  const fonts = [F(400, 13), `500 18px ${HAND}`];
   try { await Promise.race([Promise.all([...fonts.map(f => document.fonts.load(f, 'Niet schrikken! 12:00–14:00 ’')), img.decode()]), new Promise(r => setTimeout(r, 3500))]); } catch (x) {}
   if (img.complete && img.naturalWidth) IMG = img;
   LAY = layout(); buildUI();
