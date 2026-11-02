@@ -18,34 +18,24 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400&family=Caveat:wght@500&display=swap">
 <style>
-/* Layout: one column on a felt table. The folded invitation stands in a square slot that the flat sheet fills exactly
+/* Layout: one column on a white table. The folded invitation stands in a square slot that the flat sheet fills exactly
    once it is open; everything a guest does happens on the paper itself, and a single line below it talks back. */
 :root {
-  --table: #d3d8ca;
-  --table-edge: #c4cab9;
+  --table: #ffffff;
   --fg: #1f2630;
-  --fg-soft: #4e5848;
+  --fg-soft: #5d6168;
   --pen: #2a49b8;
   --pen-tint: rgba(42, 73, 184, .08);
   --line: rgba(31, 38, 48, .2);
-  --shadow: rgba(36, 46, 30, .3);
+  --shadow: rgba(25, 28, 34, .22);
   --font: "Helvetica Neue", Helvetica, Arimo, Arial, sans-serif;
   --font-hand: Caveat, "Bradley Hand", "Segoe Print", cursive;
   --step--1: .875rem; --step-0: 1rem;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --table: #1b201a; --table-edge: #232a21; --fg: #e6e9dd; --fg-soft: #a9b19f; --pen: #9db0ff; --pen-tint: rgba(157, 176, 255, .12);
-    --line: rgba(230, 233, 221, .18); --shadow: rgba(0, 0, 0, .55); color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --table: #1b201a; --table-edge: #232a21; --fg: #e6e9dd; --fg-soft: #a9b19f; --pen: #9db0ff; --pen-tint: rgba(157, 176, 255, .12);
-  --line: rgba(230, 233, 221, .18); --shadow: rgba(0, 0, 0, .55); color-scheme: dark;
+  color-scheme: light;
 }
 html, body { overflow-x: clip; }
 body {
-  background: var(--table) radial-gradient(ellipse at 50% 30%, var(--table-edge), var(--table) 70%) no-repeat;
+  background: var(--table);
   color: var(--fg); font: 400 var(--step-0)/1.5 var(--font); -webkit-tap-highlight-color: transparent;
 }
 .wrap {
